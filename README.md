@@ -1,2 +1,1 @@
-# woodcoin.org
-woodcoin.org
+# The source code for the Woodcoin.org site!

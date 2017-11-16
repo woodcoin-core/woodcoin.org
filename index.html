@@ -1,0 +1,197 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>Woodcoin: Sustainable. Digital. Cash.</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="/css/main.css" />
+		<noscript><link rel="stylesheet" href="/css/noscript.css" /></noscript>
+	</head>
+	<body>
+		<div id="wrapper">
+			<header id="header">
+				<div class="logo">
+					<span class="icon fa-tree"></span>
+				</div>
+				<div class="content">
+				<div class="inner">
+					<h1>Woodcoin</h1>
+					<h1>木币</h1>
+				</div>
+				</div>
+				<nav>
+					<ul>
+						<li><a href="#whatwhy">What/Why</a></li>
+						<li><a href="#trade">Trade</a></li>
+						<li><a href="#techs">Technicals</a></li>
+						<li><a href="#code">Download</a></li>
+						<li><a href="#contact">Media</a></li>
+					</ul>
+				</nav>
+			</header>
+			<div id="main">
+				<article id="whatwhy">
+					<h2 class="major">What/Why</h2>
+					<span class="image main"><img src="/img/pic02.jpg" alt="" /></span>
+					<h3 class="major">What</h3>
+					<p>Woodcoin, or Logarithmic Bitcoin, is a decentralized, non-premined, mineable, proof-of-work global public currency. The unit of exchange is LOG, and it began in October 2014.<br/>Whitepaper: <a href="/files/woodcoin-en.pdf">English</a>, <a href="http://vixra.org/pdf/1708.0339v1.pdf">中文</a>, <a href="/files/woodcoin-es.pdf">Espagnol</a>,<a href="/files/woodcoin_fr.pdf">Français</a>, <a href="/files/woodcoin-de.pdf">Deutsch</a></p>
+					<h3 class="major">Why</h3>
+					<p>Woodcoin was created to solve a problem which exists with the supply economics of many public coins. The reward schedule either drops too quickly (like Bitcoin and Litecoin) or too slowly (like Dogecoin and Ethereum).</p>
+					<p>Woodcoin’s reward decrease is a harmonic series, which more closely models renewable resources rather than non-renewable. This means that while it is always better to chop LOGs today than tomorrow, there will still always be an incentive to secure the network tomorrow. </p>
+					<p>The logarithmic money supply curve is designed for stability and longevity, with the longest reward schedule of any other cryptocurrency. Half the LOGs will be released in the first 200 years, instead of the first 4 years (Bitcoin). However, every block is worth less than the preceding one - so earlier adopters are always rewarded and the supply will never rise above 28.5 million LOG.</p>
+					<h3 class="major">How</h3>					
+					<p>The woodcoin ledger is secured with the very best cryptography.  The Skein hash function provides proof of work while the well tested elliptic curve P256 provides some ECDSA diversity with at least the same level of security as the Koblitz curve used by Bitcoin.</p>				
+				</article>
+				<article id="trade">
+					<h2 class="major">Get Equipped!</h2>
+					<span class="image main"><img src="/img/pic04.jpg" alt="" /></span>
+					<h3 class="major">Explorers</h3>
+					<a href="https://explorer.woodcoin.org/">Explorer.Woodcoin.org</a>
+					<br/>
+					<a href="https://logexplorer.net/">LogExplorer.net</a>
+					<br/>
+					<a href="https://www.blockexperts.com/log">Block Experts</a>
+					<br/>
+					<a href="http://yiimp.l8nit3-miners.com/explorer/LOG">l8nit3-miners explorer</a>
+					<br/>
+					<a href="http://cryptoguru.tk/CurrencyInfo/index.php?Currency=LOG">CryptoGuru.tk</a> 
+					<br/>
+					<br/>
+
+
+					<h3 class="major">Exchange Partner</h3>
+					<a href="https://c-cex.com/?p=log-btc">C-Cex</a>
+					<br/> 
+					<br/>
+
+					<h3 class="major">Pools</h3>
+					<a href="http://yiimp.l8nit3-miners.com/explorer/LOG">l8nit3-miners</a>
+					<br/>
+					<a href="https://pool.nosekefik.com/">Nosekefik</a>
+					<br/>
+					<a href="https://wood.suprnova.cc/">SuprNova.cc</a>
+					<br/>
+					<a href="http://yiimp.ccminer.org/">yiimp.CCMiner.org</a> 
+					<br/>
+					<br/>
+
+					<h3 class="major">Test Faucet </h3>
+					<br/>
+					<a href="http://cryptoguru.tk/Faucet/index.php?Currency=LOG">CryptoGuru.tk</a> 
+				</article>
+				<article id="techs">
+					<h2 class="major">Technical Details</h2>
+					<span class="image main"><img src="/img/pic01.jpg" alt="" /></span>
+					<p>Woodcoin is a public cryptocurrency like Bitcoin.
+					There are three major changes, with design considerations listed here:</p>
+					<li>Proof of Work algorithm: Double Skein</li>
+					<ul>This is the first consensus network built solely with the skein hash function. Read more about Skein <a href="http://skein-hash.info/about">here</a>  We hope to encourage further use and testing of the Skein family with this coin.</ul>
+
+					<li>Elliptic Curve for Digital Signatures: X9_62_prime256v1.</li>
+					<ul>To sign transactions and create public and private addresses we use the elliptic curve digital signature algorithm ECDSA just like Bitcoin. However we use a different curve as a basis to do so. This curve is perhaps the most used in the financial industry. Some people think it is better. We like to encourage cryptographic diversity.</ul>
+
+					<li>Logarithmic Coin Release</li>
+					<ul>Woodcoin is the first coin to use a logarithmic coin release. The woodcutting reward is continually adjusted according to the harmonic series. From /src/main.cpp:
+<pre><code>int64 static GetBlockValue(int nHeight, int64 nFees) {
+	int64 nSubsidy = 1000000 * COIN;
+	if (nHeight&lt;100) return 1*COIN;
+	else return nSubsidy/nHeight + nFees;
+}</code></pre>
+					This leads to a total money supply S which increases logarithmically in block height n:
+<pre><code>log = natural logarithm
+gamma = euler-mascheroni constant
+forest = 5187377.51763962
+S = 1000000* ( log n + gamma ) – forest
+</code></pre>
+Unlike Bitcoin and most other cryptocurrencies, the reward will never drop to zero and will smoothly decrease. (Technically it isn't scheduled to reach zero until the reward drops to under 1e-8 LOG, but that isn’t for about another 350 million years.) Here is a plot of the woodcutting reward per day, compared to Bitcoin, for the next 50 years or so: <span class="image main"><img src="/img/woodcoin-v-bitcoin-distribution.png" alt="" /></span></ul>
+					<br/>
+				</article>
+				<article id="code">
+					<h2 class="major">Downloads / Code</h2>
+					<span class="image main"><img src="/img/pic03.jpg" alt="" /></span>
+
+					<h3 class="major">Graphical (Stable) </h3>
+					<b>Linux: </b><a href="https://github.com/woodcoin-core/woodcoin-linux/">Download (1.2.0.10)</a> 
+					<br/>
+					<b>Mac: </b><a href="https://github.com/woodcoin-core/woodcoin-mac/raw/master/woodcoin-qt.dmg">Download (1.2.0.10)</a> 
+					<br/>
+					<b>Windows: </b><a href="https://github.com/woodcoin-core/woodcoin-windows/raw/master/woodcoin-qt.exe">Download (1.2.0.10)</a> 
+					<br/>
+					<br/>
+
+					<h3 class="major">Woodcoin-Core (Mar. 21, 2017 Release) </h3>
+					<b>Source: </b><a href="https://github.com/funkshelper/woodcore">Woodcoin-Core 0.13.2 </a>
+					<br/>
+					<b>Windows Executable: </b><a href="https://github.com/woodcoin-core/woodcoin-windows/raw/master/woodcore-qt.exe">Woodcoin-Core 0.13.2</a>
+					<br/>
+					<br/>
+
+					<h3 class="major">Daemon </h3>	
+					<br/>
+					<a href="https://github.com/funkshelper/fo-realz-woodcoin">The-Real-Woodcoin (Satoshi 0.5.3 Based)</a>
+					<br/>
+					<a href="https://github.com/funkshelper/woodcoin-minimal/">Woodcoin-minimal (Satoshi 0.8 woodcoind only)</a>
+					<br/>
+					<br/>
+
+					<h3 class="major">Miner</h3>
+					<b>GPU </b><a href="https://github.com/tpruvot/ccminer/">CCMiner (Nvidia)</a>
+					<br/>
+					<br/>
+					<h3 class="major">Miscellaneous</h3>
+					<b>Linux/Mac/Windows: </b><a href="https://github.com/woodcoin-core/vanitygen/">VanityGen</a>
+					<br/>
+					<b>Linux/Mac/Windows: </b><a href="https://github.com/funkshelper/woodcoin/">Original git repo</a>
+				</article>
+				<article id="contact">
+					<h2 class="major">Media</h2>
+					<span class="image main"><img src="/img/unspecified3.jpeg" alt="" /></span>
+					<h2 class="major">Discussion</h2>
+					<a href="https://bitcointalk.org/index.php?topic=831003">Bitcointalk Announcement Thread</a>
+					<br/>
+					<br/>
+					<h2 class="major">Contact</h2>
+					<br/>
+      					<a href="https://webchat.freenode.net/?channels=##woodcoin">Woodcoin IRC</a>
+					<br/>
+					<a href="https://github.com/woodcoin-core">Woodcoin Core Team Github</a>
+					<br/>
+					<a href="http://vtscc.org">Vermont Secure Computing Consultancy</a>
+					<br/>
+					<a href="https://www.facebook.com/vtscc/">VTSCC Facebook Page</a>
+					<br/>
+					<br/>
+					<h2 class="major">External</h2>
+					<br/>
+      					<a href="http://coinmarketcap.com/currencies/woodcoin/">Coinmarketcap Woodcoin Page</a>
+					<br/>
+      					<a href="https://en.wikipedia.org/wiki/Woodcoin">Wikipedia Entry </a>
+					<br/>
+      					<a href="http://woodcoin.rocks/status/">Woodcoin.rocks network status </a>
+					<br/>
+      					<a href="http://coingain.com/price/usd/log">Coingain Exhange Rates Woodcoin Page</a>
+					<br/>
+      					<a href="https://www.cryptocompare.com/coins/log/analysis/BTC">Crypto Compare Woodcoin Page</a>
+					<br/>
+      					<a href="https://www.worldcoinindex.com/coin/Woodcoin">Worldcoin Index Woodcoin Page </a>
+					<br/>
+      					<a href="http://coincap.io/LOG"> Coincap.io Woodcoin Page </a>
+					<br/>
+      					<a href="https://walletinvestor.com/currency/woodcoin">Wallet Investor Woodcoin Page </a>
+					<br/>
+      					<a href="https://www.coingecko.com/en/coins/woodcoin">Coingecko Woodcoin Page </a>
+					<br/>
+      					<a href="https://www.coinhills.com/market/log/">Coinhills Woodcoin Page </a>
+					<br/>
+      					<a href="http://woodcoin.info">Woodcoin Blog </a>
+
+				</article>
+			</div>
+		</div>
+		<div id="bg"></div>
+		<script src="/js/jquery.min.js"></script>
+		<script src="/js/skel.min.js"></script>
+		<script src="/js/util.js"></script>
+		<script src="/js/main.js"></script>
+	</body>
+</html>
