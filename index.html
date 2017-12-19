@@ -34,10 +34,10 @@
 					<h2 class="major">What/Why</h2>
 					<span class="image main"><img src="/img/pic02.jpg" alt="" /></span>
 					<h3 class="major">What</h3>
-					<p>Woodcoin, or Logarithmic Bitcoin, is a decentralized, non-premined, mineable, proof-of-work global public currency. The unit of exchange is LOG, and it began in October 2014.<br/>Whitepaper: <a href="/files/woodcoin-en.pdf">English</a>, <a href="http://vixra.org/pdf/1708.0339v1.pdf">中文</a>, <a href="/files/woodcoin-es.pdf">Espagnol</a>,<a href="/files/woodcoin_fr.pdf">Français</a>, <a href="/files/woodcoin-de.pdf">Deutsch</a></p>
+					<p>Woodcoin, or Logarithmic Bitcoin, is a decentralized, non-premined, mineable, proof-of-work global public currency. The unit of exchange is LOG, and it began in October 2014.<br/><p>Whitepaper: <a href="/files/woodcoin-en.pdf">English</a>, <a href="http://vixra.org/pdf/1708.0339v1.pdf">中文</a>, <a href="/files/woodcoin-es.pdf">Espagnol</a>,<a href="/files/woodcoin_fr.pdf">Français</a>, <a href="/files/woodcoin-de.pdf">Deutsch</a></p>
 					<h3 class="major">Why</h3>
-					<p>Woodcoin was created to solve a problem which exists with the supply economics of many public coins. The reward schedule either drops too quickly (like Bitcoin and Litecoin) or too slowly (like Dogecoin and Ethereum).</p>
-					<p>Woodcoin’s reward decrease is a harmonic series, which more closely models renewable resources rather than non-renewable. This means that while it is always better to chop LOGs today than tomorrow, there will still always be an incentive to secure the network tomorrow. </p>
+					<p>Woodcoin was created to solve a problem which exists with the supply economics of many public coins. Public decentralized coins are Mineable.  This is what makes them decentralized.  Mining occurs with a reward schedule or a monetary policy.  The reward schedule often drops too quickly (like Bitcoin and Litecoin) or too slowly (like Dogecoin and Ethereum).</p>
+					<p>Woodcoin’s reward decrease is a harmonic series, which more closely models renewable resources rather than non-renewable. This means that while the mining reward is always bigger today than it will be tomorrow, there will still always be an incentive to secure the network tomorrow, even with low transaction fees. </p>
 					<p>The logarithmic money supply curve is designed for stability and longevity, with the longest reward schedule of any other cryptocurrency. Half the LOGs will be released in the first 200 years, instead of the first 4 years (Bitcoin). However, every block is worth less than the preceding one - so earlier adopters are always rewarded and the supply will never rise above 28.5 million LOG.</p>
 				</article>
 				<article id="trade">
@@ -78,12 +78,12 @@
 					<h2 class="major">Technical Details</h2>
 					<span class="image main"><img src="/img/pic01.jpg" alt="" /></span>
 					<p>Woodcoin is a public cryptocurrency like Bitcoin.
-					There are three major changes, with design considerations listed here:</p>
+					There are three major innovations, with design considerations listed here:</p>
 					<li>Proof of Work algorithm: Double Skein</li>
 					<ul>This is the first consensus network built solely with the skein hash function. You can read more about Skein <a href="http://skein-hash.info/about">here</a>. We hope to encourage further use and testing of the Skein family with this coin.</ul>
 
 					<li>Elliptic Curve for Digital Signatures: X9_62_prime256v1.</li>
-					<ul>To sign transactions and create public and private addresses we use the elliptic curve digital signature algorithm ECDSA just like Bitcoin. However we use a different curve as a basis to do so. This curve is perhaps the most used in the financial industry. Some people think it is better. We like to encourage cryptographic diversity.</ul>
+					<ul>To sign transactions and create public and private addresses we use the elliptic curve digital signature algorithm ECDSA just like Bitcoin. However we use a different curve as a basis to do so. This curve is perhaps the most used in the financial industry. Many people claim it is more secure. We like to encourage cryptographic diversity.</ul>
 
 					<li>Logarithmic Coin Release</li>
 					<ul>Woodcoin is the first coin to use a logarithmic coin release. The woodcutting reward is continually adjusted according to the harmonic series. From /src/main.cpp:
@@ -98,7 +98,7 @@ gamma = euler-mascheroni constant
 forest = 5187377.51763962
 S = 1000000* ( log n + gamma ) – forest
 </code></pre>
-					Unlike Bitcoin and most other cryptocurrencies, the reward isn't scheduled to reach zero for another 350 million years. Here is a plot of the woodcutting reward per day, compared to Bitcoin, for the next 50 years or so: <span class="image main"><img src="/img/woodcoin-v-bitcoin-distribution.png" alt="" /></span></ul>
+					Unlike Bitcoin and most other cryptocurrencies, the reward isn't scheduled to reach zero for another 350 million years. Here is a plot of the woodcutting reward per day, compared to Bitcoin, for the next 50 years: <span class="image main"><img src="/img/woodcoin-v-bitcoin-distribution.png" alt="" /></span></ul>
 					<br/>
 				</article>
 				<article id="code">
