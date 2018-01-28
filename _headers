@@ -1,8 +1,7 @@
 /*
-  Strict-Transport-Security: max-age=31536000; preload; includeSubDomains
+  Strict-Transport-Security: max-age=63072000; preload; includeSubDomains
   Public-Key-Pins: pin-sha256="sRHdihwgkaib1P1gxX8HFszlD+7/gTfNvuAybgLPNis="; pin-sha256="YLh1dUR9y6Kja30RrAn7JKnbQG/uEtLMkBgFF2Fuihg="; pin-sha256="C5+lpZ7tcVwmwQIMcRtPbsQtWLABXhQzejna0wHFr8M="; max-age=7776000; includeSubDomains
   Referrer-Policy: no-referrer
-  Content-Security-Policy: default-src 'none'; script-src 'self' https://d33wubrfki0l68.cloudfront.net; style-src 'self' https://fonts.googleapis.com https://d33wubrfki0l68.cloudfront.net; img-src 'self' data: https://d33wubrfki0l68.cloudfront.net; font-src 'self' https://d33wubrfki0l68.cloudfront.net; connect-src 'none'; media-src 'none'; object-src 'none'; child-src 'none'; form-action 'none'; sandbox allow-same-origin allow-scripts;
   X-Frame-Options: DENY
   X-XSS-Protection: 1; mode=block
   X-Content-Type-Options: nosniff
