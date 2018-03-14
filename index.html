@@ -40,9 +40,11 @@
 					<h3 class="major">What</h3>
 					<p>Woodcoin is a logarithmically growing money supply, a decentralized, mineable, proof-of-work, public virtual currency. The unit of exchange is LOG, and the genesis block was mined in October 2014.<br/><p>WHITEPAPER: <a href="/files/woodcoin-en.pdf">English</a>, <a href="http://vixra.org/pdf/1708.0339v1.pdf">中文</a> , <a href="/files/woodcoin-es.pdf"> Espagnol </a> , <a href="/files/woodcoin_fr.pdf"> Français </a> , <a href="/files/woodcoin-de.pdf"> Deutsch</a></p>
 					<h3 class="major">Why</h3>
-					<p>Woodcoin (LOG) was created to solve a problem which exists with the supply economics of many currencies.  Mining occurs with a predetermined reward schedule or a public monetary policy.  If the reward schedule drops too quickly, it results in a somewhat centralized structure as founders or early adopters hold all the existing coin and there is little incentive for miners to secure the network.  Fees do provide substantial incentive for miners but high transaction fees can also drag down the value of the coin itself.  If a reward schedule drops too slowly, inflation is the result and your currency will eventually decrease compare to less inflationary assets.  </p>
-					<p>Woodcoin’s coinbase reward finds middle ground by growing as an harmonic series.  This means that the mining reward is always bigger today than it will be tomorrow, and that there will be a reward incentive for miners to to secure the network for a long long time. </p>
-					<p>The logarithmic money supply curve is designed for stability and longevity, with the longest reward schedule of any other cryptocurrency.  Half the LOGs will be released in the first 200 years, instead of the first 4 years (Bitcoin). However, every block is worth less than the preceding one - so earlier adopters are always rewarded and the supply will never rise above 28.5 million LOG.</p>
+					<p>Woodcoin (LOG) was created to address a problem which exists with the mining reward schedule of other public coins.  For a decentralized coin, mining must takes place with a predetermined reward schedule / public monetary policy.  If the reward schedule drops too quickly, it results in a situation in which founders or early adopters hold all the existing coin and there is little incentive for miners to secure the network.  Transaction fees do provide incentive for miners but high fees can also drag down the value of the coin.  On the other hand, if a reward schedule drops too slowly, the supply increases without bound and inflation is the result.  </p>
+
+					<p>Woodcoin’s coinbase reward finds the middle ground between stagnation and inflation by growing logarithmically.  This means that the mining reward is always bigger today than it will be tomorrow, and that there will be a reward incentive for miners to secure the network. </p>
+
+					<p>The logarithmic money supply curve is designed for stability and longevity.  Half the LOGs will be released in the first 200 years, instead of the first 4 years (BTC / LTC). However, every block is worth less than the preceding one - so earlier adopters are always rewarded and the supply will never rise above 28.5 million LOG.</p>
 					
 				</article>
 				<article id="trade">
@@ -82,10 +84,10 @@
 					<p>Woodcoin is a public cryptocurrency like Bitcoin.
 					There are three major innovations, with design considerations listed here:</p>
 					<li>Proof of Work algorithm: Double Skein</li>
-					<ul>This is the first consensus network built solely with the skein hash function. You can read more about Skein <a href="http://skein-hash.info/about">here</a>. We hope to encourage further use and testing of the Skein family with this coin.  Use of algorithms already in use by high-work netorks presents an attack vulnerability and so Woodcoin uses a mostly unused algorith.  While many coins use the skein function to some extent (X11 coins such as Dash, skeincoin, Quark, and others) woodcoin uses only Skein512 for proof-of-work.</ul>
+					<ul>This is the first consensus network built solely with the skein hash function. You can read more about Skein <a href="http://skein-hash.info/about">here</a>. Use of algorithms already in use by high-work netorks presents an attack vulnerability.  Woodcoin is secured with Skein2 or pure skein as the proof-of-work hash function.  While many coins include the skein function to some extent (X11 coins such as Dash, skeincoin, Quark, and others) woodcoin uses only Skein512 for proof-of-work, computed twice.  This is indeference to Satoshi's choice to use a double sha256 hash to secure the first public coin.</ul>
 
 					<li>Elliptic Curve for Digital Signatures: X9_62_prime256v1.</li>
-					<ul>To sign transactions and create public and private addresses we use the elliptic curve digital signature algorithm ECDSA just like Bitcoin. However we use a different curve as a basis to do so. This curve is perhaps the most used in the financial industry. Some people claim it is more secure.  When the opportunity presented itself to add some cryptographic diversity without greater risk, the decsision was made to use this curve. </ul>
+					<ul>To sign transactions and create public and private addresses we use the elliptic curve digital signature algorithm ECDSA just like most all currently available public coins.  However woodcoin uses a different curve also known as secp256r1 as a basis to do so.  This curve was perhaps the most used in the financial industry before bitcoin. Some people claim it is more secure.   </ul>
 
 					<li>Logarithmic Coin Release</li>
 					<ul>Woodcoin is the first coin to use a logarithmic coin release. The woodcutting reward is continually adjusted according to the harmonic series.  The algorithm that controls the creation of units of currency over time should be the first thing every educational site about a coin should present.  In that spirit here is the monetary policy of Woodcoin:   
@@ -100,7 +102,7 @@ From /src/main.cpp:
 					This leads to a total money supply S which increases logarithmically in block height n:
 <pre><code>log = natural logarithm
 gamma = euler-mascheroni constant
-forest = 5187377.51763962
+forest = 5187377.51763962 (value of LOG reward suppressed during the first 100 blocks) 
 S = 1000000* ( log n + gamma ) – forest
 </code></pre>
 					Unlike Bitcoin and most other cryptocurrencies, the reward isn't scheduled to reach zero until far in the future.  The coinbase will continue to subsidize miners and keep the coin alive - both in allowing for low-fee transactions and in improving network security.  Here is a plot of the woodcutting reward per day, compared to Bitcoin, for the next 50 years: <span class="image main"><img src="/img/woodcoin-v-bitcoin-distribution.png" alt="" /></span></ul>
@@ -173,10 +175,12 @@ S = 1000000* ( log n + gamma ) – forest
 					<br/>
       					<a href="https://en.wikipedia.org/wiki/Woodcoin">Wikipedia </a>
 					<br/>
-      					<a href="http://woodcoin.info">Woodcoin Blog</a>
+      					<a href="http://woodcoin.info">Blog</a>
 					<br/>
 					<br/>
 					<h2 class="major">Woodcoin Pages</h2>
+      					<a href="http://cryptoguru.tk/Charts/index.php?Currency=LOG">Network Stats and Charts</a>
+					<br/>
       					<a href="http://coingain.com/price/usd/log">Coingain Exhange Rates</a>
 					<br/>
       					<a href="https://www.cryptocompare.com/coins/log/analysis/BTC">Crypto Compare</a>
